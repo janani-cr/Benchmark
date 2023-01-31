@@ -33,6 +33,8 @@ public class BenchmarkTest02100 extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		if (!whiteList.contains(request))
+			throw new IOException;
 		doPost(request, response);
 	}
 
