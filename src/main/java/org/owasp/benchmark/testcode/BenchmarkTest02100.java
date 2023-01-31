@@ -33,8 +33,9 @@ public class BenchmarkTest02100 extends HttpServlet {
 	
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if (request.getContentLength() == 0)
+		if (request.getContentLength() == 0) {
 			throw new IOException;
+		}
 		doPost(request, response);
 	}
 
